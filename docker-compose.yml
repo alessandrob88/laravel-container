@@ -1,0 +1,48 @@
+version: '3'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api.Dockerfile
+    depends_on:
+      - db
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: api_database
+      DB_PORT: 3306
+      DB_DATABASE: api_backend
+      DB_USERNAME: root
+      DB_PASSWORD: 
+    volumes:
+      - ./api:/var/www/html
+    networks:
+      - backend
+  db:
+    container_name: api_database
+    build:
+      context: .
+      dockerfile: db.Dockerfile
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_DATABASE: "api_backend"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db/data:/var/lib/mysql
+    networks:
+      - backend
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./api:/var/www/html
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - api
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
