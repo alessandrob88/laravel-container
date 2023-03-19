@@ -1,6 +1,7 @@
 version: '3'
 services:
   api:
+    container_name: api_laravel
     build:
       context: .
       dockerfile: api.Dockerfile
@@ -32,6 +33,7 @@ services:
     networks:
       - backend
   nginx:
+    container_name: api_nginx
     image: nginx:latest
     ports:
       - "8080:80"
