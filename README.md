@@ -6,7 +6,7 @@ first of all, clone laravel project from this repository:
 
 with this command
 
-    git clone https://github.com/alessandrob88/laravel-ddd
+    git clone https://github.com/alessandrob88/laravel-ddd api
 
 clone it inside ```api``` folder (firstly create it)
 
@@ -15,6 +15,11 @@ clone it inside ```api``` folder (firstly create it)
 start project using docker-compose command:
 
     docker-compose up -d --build
+
+launch database migrations:
+
+    php artisan migrate
+
 
 # api key and x-auth-token
 remember to generate an api key for this project and an auth token. Note that auth token is just an example, authentication it's not part of this project at the moment
