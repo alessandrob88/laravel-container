@@ -8,7 +8,7 @@ with this command
 
     git clone https://github.com/alessandrob88/laravel-ddd api
 
-clone it inside ```api``` folder (firstly create it)
+clone it inside ```api``` folder
 
 # start project
 
