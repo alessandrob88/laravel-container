@@ -16,7 +16,7 @@ start project using docker-compose command:
 
     docker-compose up -d --build
 
-launch database migrations:
+launch database migrations by entering container:
 
     php artisan migrate
 
