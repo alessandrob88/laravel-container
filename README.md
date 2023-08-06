@@ -1,4 +1,4 @@
-# clone api project
+# clone a project
 
 first of all, clone a php project inside api folder
 
