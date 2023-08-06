@@ -26,11 +26,3 @@ remember to generate an api key for this project and an auth token. Note that au
 to generate an api key in laravel:
     
     php artisan key:generate
-# start laravel queue
-to start laravel queue to process jobs enter api container:
-
-    docker exec -it api_laravel bash
-
-then 
-
-    php artisan queue:work
